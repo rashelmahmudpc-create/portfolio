@@ -3,15 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rashel Mahmud — Portfolio</title>
-  <meta name="description" content="Modern animated portfolio — creative developer & designer." />
+  <title>Rashel Mahmud — Creative Developer</title>
+  <meta name="description" content="Modern animated portfolio — creative developer & designer crafting delightful web experiences." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader-mark">RM</div>
+    <div class="loader-bar"><span></span></div>
+  </div>
+
+  <!-- Scroll progress -->
+  <div class="scroll-progress" id="progress"></div>
+
+  <!-- Background -->
   <canvas id="bg-canvas"></canvas>
+  <div class="mesh">
+    <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+  </div>
+  <div class="grain"></div>
+
+  <!-- Cursor -->
   <div class="cursor-dot"></div>
   <div class="cursor-ring"></div>
 
@@ -20,6 +36,7 @@
     <nav class="nav-links" id="navLinks">
       <a href="#home">Home</a>
       <a href="#about">About</a>
+      <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
@@ -33,32 +50,56 @@
   </header>
 
   <main>
+    <!-- HERO -->
     <section class="hero" id="home">
-      <div class="hero-inner">
-        <p class="hero-tag reveal">👋 Hello, I'm</p>
-        <h1 class="hero-title reveal">
-          <span class="grad">Rashel Mahmud</span>
-        </h1>
-        <h2 class="hero-sub reveal">
-          I build <span id="typed" class="typed"></span><span class="caret">|</span>
-        </h2>
-        <p class="hero-desc reveal">
-          Creative developer crafting fast, beautiful and interactive web experiences
-          that people love to use.
-        </p>
-        <div class="hero-cta reveal">
-          <a href="#projects" class="btn btn-primary">View My Work</a>
-          <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+      <div class="hero-grid">
+        <div class="hero-inner">
+          <p class="hero-tag reveal"><span class="pulse"></span> Available for freelance</p>
+          <h1 class="hero-title reveal">
+            Hi, I'm <span class="grad">Rashel</span><br />
+            <span class="hero-role">I build <span id="typed" class="typed"></span><span class="caret">|</span></span>
+          </h1>
+          <p class="hero-desc reveal">
+            Creative developer crafting fast, beautiful and interactive web
+            experiences — from pixel-perfect UI to smooth, delightful motion.
+          </p>
+          <div class="hero-cta reveal">
+            <a href="#projects" class="btn btn-primary magnetic">View My Work <span>→</span></a>
+            <a href="#contact" class="btn btn-ghost magnetic">Let's Talk</a>
+          </div>
+          <div class="hero-stats reveal">
+            <div><strong data-count="5">0</strong><span>Years Exp</span></div>
+            <div><strong data-count="48">0</strong><span>Projects</span></div>
+            <div><strong data-count="30">0</strong><span>Happy Clients</span></div>
+          </div>
         </div>
-        <div class="hero-stats reveal">
-          <div><strong data-count="5">0</strong><span>Years Exp</span></div>
-          <div><strong data-count="48">0</strong><span>Projects</span></div>
-          <div><strong data-count="30">0</strong><span>Clients</span></div>
+        <div class="hero-visual reveal">
+          <div class="orb-card tilt">
+            <div class="orb-ring"></div>
+            <div class="orb-core">RM</div>
+            <span class="chip c1">⚛️ React</span>
+            <span class="chip c2">🎨 UI/UX</span>
+            <span class="chip c3">⚡ Fast</span>
+            <span class="chip c4">✨ Motion</span>
+          </div>
         </div>
       </div>
       <a href="#about" class="scroll-hint" aria-label="Scroll down"><span></span></a>
     </section>
 
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>HTML5</span><i>✦</i><span>CSS3</span><i>✦</i><span>JavaScript</span><i>✦</i><span>TypeScript</span><i>✦</i>
+        <span>React</span><i>✦</i><span>Next.js</span><i>✦</i><span>Node.js</span><i>✦</i><span>GSAP</span><i>✦</i>
+        <span>Figma</span><i>✦</i><span>Tailwind</span><i>✦</i>
+        <span>HTML5</span><i>✦</i><span>CSS3</span><i>✦</i><span>JavaScript</span><i>✦</i><span>TypeScript</span><i>✦</i>
+        <span>React</span><i>✦</i><span>Next.js</span><i>✦</i><span>Node.js</span><i>✦</i><span>GSAP</span><i>✦</i>
+        <span>Figma</span><i>✦</i><span>Tailwind</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
     <section class="section" id="about">
       <div class="container">
         <p class="eyebrow reveal">About Me</p>
@@ -76,77 +117,145 @@
               <li>✦ Full-stack Web Applications</li>
             </ul>
           </div>
-          <div class="about-card reveal">
-            <div class="glow"></div>
-            <div class="avatar">RM</div>
-            <h3>Rashel Mahmud</h3>
-            <p>Creative Developer</p>
-            <div class="socials">
-              <a href="#" aria-label="GitHub">GH</a>
-              <a href="#" aria-label="LinkedIn">in</a>
-              <a href="#" aria-label="Twitter">X</a>
-            </div>
+          <div class="about-side">
+            <div class="stat-card tilt reveal"><h3 data-count="48">0</h3><p>Projects Done</p></div>
+            <div class="stat-card tilt reveal"><h3 data-count="30">0</h3><p>Happy Clients</p></div>
+            <div class="stat-card tilt reveal"><h3 data-count="12">0</h3><p>Awards Won</p></div>
+            <div class="stat-card tilt reveal"><h3 data-count="99">0</h3><p>% Satisfaction</p></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section alt" id="skills">
+    <!-- EXPERIENCE -->
+    <section class="section alt" id="experience">
       <div class="container">
-        <p class="eyebrow reveal">My Skills</p>
-        <h2 class="section-title reveal">Tools I work <span class="grad">with</span></h2>
-        <div class="skills-grid">
-          <div class="skill reveal"><div class="skill-head"><span>HTML & CSS</span><em>95%</em></div><div class="bar"><i data-w="95"></i></div></div>
-          <div class="skill reveal"><div class="skill-head"><span>JavaScript</span><em>90%</em></div><div class="bar"><i data-w="90"></i></div></div>
-          <div class="skill reveal"><div class="skill-head"><span>React / Next.js</span><em>85%</em></div><div class="bar"><i data-w="85"></i></div></div>
-          <div class="skill reveal"><div class="skill-head"><span>Node.js</span><em>80%</em></div><div class="bar"><i data-w="80"></i></div></div>
-          <div class="skill reveal"><div class="skill-head"><span>UI / UX Design</span><em>88%</em></div><div class="bar"><i data-w="88"></i></div></div>
-          <div class="skill reveal"><div class="skill-head"><span>Animation</span><em>92%</em></div><div class="bar"><i data-w="92"></i></div></div>
+        <p class="eyebrow reveal">Career</p>
+        <h2 class="section-title reveal">My <span class="grad">journey</span></h2>
+        <div class="timeline">
+          <div class="tl-item reveal">
+            <div class="tl-dot"></div>
+            <span class="tl-date">2024 — Present</span>
+            <h3>Senior Frontend Developer</h3>
+            <p class="tl-org">Freelance / Remote</p>
+            <p>Building high-performance web apps and design systems for global clients.</p>
+          </div>
+          <div class="tl-item reveal">
+            <div class="tl-dot"></div>
+            <span class="tl-date">2022 — 2024</span>
+            <h3>Product Designer & Developer</h3>
+            <p class="tl-org">Studio Nova</p>
+            <p>Led UI/UX and frontend for SaaS dashboards and marketing sites.</p>
+          </div>
+          <div class="tl-item reveal">
+            <div class="tl-dot"></div>
+            <span class="tl-date">2020 — 2022</span>
+            <h3>Junior Web Developer</h3>
+            <p class="tl-org">Pixel Forge</p>
+            <p>Started my craft building responsive sites and interactive landing pages.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="projects">
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <div class="container">
+        <p class="eyebrow reveal">My Skills</p>
+        <h2 class="section-title reveal">Tools I work <span class="grad">with</span></h2>
+        <div class="skills-wrap">
+          <div class="skills-bars">
+            <div class="skill reveal"><div class="skill-head"><span>HTML & CSS</span><em>95%</em></div><div class="bar"><i data-w="95"></i></div></div>
+            <div class="skill reveal"><div class="skill-head"><span>JavaScript</span><em>90%</em></div><div class="bar"><i data-w="90"></i></div></div>
+            <div class="skill reveal"><div class="skill-head"><span>React / Next.js</span><em>85%</em></div><div class="bar"><i data-w="85"></i></div></div>
+            <div class="skill reveal"><div class="skill-head"><span>Node.js</span><em>80%</em></div><div class="bar"><i data-w="80"></i></div></div>
+            <div class="skill reveal"><div class="skill-head"><span>UI / UX Design</span><em>88%</em></div><div class="bar"><i data-w="88"></i></div></div>
+            <div class="skill reveal"><div class="skill-head"><span>Animation</span><em>92%</em></div><div class="bar"><i data-w="92"></i></div></div>
+          </div>
+          <div class="radials reveal">
+            <div class="radial" data-p="95"><svg viewBox="0 0 120 120"><circle class="track" cx="60" cy="60" r="52"/><circle class="prog" cx="60" cy="60" r="52"/></svg><b>0%</b><span>Frontend</span></div>
+            <div class="radial" data-p="88"><svg viewBox="0 0 120 120"><circle class="track" cx="60" cy="60" r="52"/><circle class="prog" cx="60" cy="60" r="52"/></svg><b>0%</b><span>Design</span></div>
+            <div class="radial" data-p="82"><svg viewBox="0 0 120 120"><circle class="track" cx="60" cy="60" r="52"/><circle class="prog" cx="60" cy="60" r="52"/></svg><b>0%</b><span>Backend</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section alt" id="projects">
       <div class="container">
         <p class="eyebrow reveal">Portfolio</p>
         <h2 class="section-title reveal">Featured <span class="grad">projects</span></h2>
         <div class="projects-grid">
           <article class="project reveal">
-            <div class="thumb" style="--c1:#6d5efc;--c2:#00e0c6"></div>
+            <div class="thumb" style="--c1:#6d5efc;--c2:#00e0c6"><span class="thumb-icon">📊</span></div>
             <div class="project-body">
               <h3>Nova Dashboard</h3>
               <p>Real-time analytics dashboard with smooth data animations.</p>
               <div class="tags"><span>React</span><span>D3.js</span><span>API</span></div>
+              <a href="#" class="project-link">View Case Study →</a>
             </div>
           </article>
           <article class="project reveal">
-            <div class="thumb" style="--c1:#ff5f9e;--c2:#ffb86c"></div>
+            <div class="thumb" style="--c1:#ff5f9e;--c2:#ffb86c"><span class="thumb-icon">🛍️</span></div>
             <div class="project-body">
               <h3>Aurora Commerce</h3>
               <p>Headless e-commerce store with instant checkout & cart.</p>
               <div class="tags"><span>Next.js</span><span>Stripe</span></div>
+              <a href="#" class="project-link">View Case Study →</a>
             </div>
           </article>
           <article class="project reveal">
-            <div class="thumb" style="--c1:#00c2ff;--c2:#7c4dff"></div>
+            <div class="thumb" style="--c1:#00c2ff;--c2:#7c4dff"><span class="thumb-icon">💬</span></div>
             <div class="project-body">
               <h3>Pulse Chat</h3>
               <p>Realtime messaging app with presence and typing indicators.</p>
               <div class="tags"><span>Node</span><span>Socket.io</span></div>
+              <a href="#" class="project-link">View Case Study →</a>
             </div>
           </article>
           <article class="project reveal">
-            <div class="thumb" style="--c1:#00e0a4;--c2:#00b3ff"></div>
+            <div class="thumb" style="--c1:#00e0a4;--c2:#00b3ff"><span class="thumb-icon">🚀</span></div>
             <div class="project-body">
               <h3>Lumen Landing</h3>
               <p>Animated marketing page with scroll-driven storytelling.</p>
               <div class="tags"><span>GSAP</span><span>CSS</span></div>
+              <a href="#" class="project-link">View Case Study →</a>
             </div>
           </article>
         </div>
       </div>
     </section>
 
+    <!-- TESTIMONIALS -->
+    <section class="section" id="testimonials">
+      <div class="container narrow center">
+        <p class="eyebrow reveal">Testimonials</p>
+        <h2 class="section-title reveal">What clients <span class="grad">say</span></h2>
+        <div class="testi-wrap reveal">
+          <div class="testi-track" id="testiTrack">
+            <blockquote class="testi">
+              <p>"Rashel transformed our idea into a stunning product. The animations
+              make the whole experience feel alive."</p>
+              <footer><strong>Ayesha K.</strong><span>CEO, Studio Nova</span></footer>
+            </blockquote>
+            <blockquote class="testi">
+              <p>"Fast, reliable and incredibly talented. Our conversion rate jumped
+              40% after the redesign."</p>
+              <footer><strong>Daniel M.</strong><span>Founder, Aurora</span></footer>
+            </blockquote>
+            <blockquote class="testi">
+              <p>"The attention to detail is unmatched. Every interaction feels
+              intentional and smooth."</p>
+              <footer><strong>Sara L.</strong><span>PM, Pulse</span></footer>
+            </blockquote>
+          </div>
+          <div class="testi-dots" id="testiDots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
     <section class="section alt" id="contact">
       <div class="container narrow">
         <p class="eyebrow reveal">Contact</p>
@@ -155,15 +264,27 @@
           <div class="field"><input type="text" id="name" required placeholder=" " /><label for="name">Your Name</label></div>
           <div class="field"><input type="email" id="email" required placeholder=" " /><label for="email">Email Address</label></div>
           <div class="field"><textarea id="message" rows="4" required placeholder=" "></textarea><label for="message">Message</label></div>
-          <button type="submit" class="btn btn-primary full">Send Message ✦</button>
+          <button type="submit" class="btn btn-primary full magnetic">Send Message ✦</button>
           <p class="form-note" id="formNote"></p>
         </form>
+        <div class="contact-socials reveal">
+          <a href="#" class="magnetic">GitHub</a>
+          <a href="#" class="magnetic">LinkedIn</a>
+          <a href="#" class="magnetic">Twitter / X</a>
+          <a href="mailto:hello@example.com" class="magnetic">Email</a>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <p>© <span id="year"></span> Rashel Mahmud — Crafted with care.</p>
+    <div class="footer-inner">
+      <a href="#home" class="logo">RM<span>.</span></a>
+      <p>© <span id="year"></span> Rashel Mahmud — Crafted with care & code.</p>
+      <div class="footer-links">
+        <a href="#about">About</a><a href="#projects">Work</a><a href="#contact">Contact</a>
+      </div>
+    </div>
   </footer>
 
   <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
