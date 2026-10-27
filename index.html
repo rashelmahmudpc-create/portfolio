@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rashel Mahmud — Portfolio</title>
+  <meta name="description" content="Modern animated portfolio — creative developer & designer." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="bg-canvas"></canvas>
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <header class="nav" id="nav">
+    <a href="#home" class="logo">RM<span>.</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span class="sun">☀️</span><span class="moon">🌙</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <p class="hero-tag reveal">👋 Hello, I'm</p>
+        <h1 class="hero-title reveal">
+          <span class="grad">Rashel Mahmud</span>
+        </h1>
+        <h2 class="hero-sub reveal">
+          I build <span id="typed" class="typed"></span><span class="caret">|</span>
+        </h2>
+        <p class="hero-desc reveal">
+          Creative developer crafting fast, beautiful and interactive web experiences
+          that people love to use.
+        </p>
+        <div class="hero-cta reveal">
+          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+        </div>
+        <div class="hero-stats reveal">
+          <div><strong data-count="5">0</strong><span>Years Exp</span></div>
+          <div><strong data-count="48">0</strong><span>Projects</span></div>
+          <div><strong data-count="30">0</strong><span>Clients</span></div>
+        </div>
+      </div>
+      <a href="#about" class="scroll-hint" aria-label="Scroll down"><span></span></a>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <p class="eyebrow reveal">About Me</p>
+        <h2 class="section-title reveal">Turning ideas into <span class="grad">reality</span></h2>
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p>I'm a developer and designer based in Dhaka, passionate about building
+            digital products that feel effortless. From pixel-perfect UI to solid backend
+            logic, I enjoy every layer of the craft.</p>
+            <p>I focus on performance, accessibility and delightful micro-interactions —
+            because great software should be both useful and a joy to use.</p>
+            <ul class="about-list">
+              <li>✦ Frontend & UI Engineering</li>
+              <li>✦ Animation & Interaction Design</li>
+              <li>✦ Full-stack Web Applications</li>
+            </ul>
+          </div>
+          <div class="about-card reveal">
+            <div class="glow"></div>
+            <div class="avatar">RM</div>
+            <h3>Rashel Mahmud</h3>
+            <p>Creative Developer</p>
+            <div class="socials">
+              <a href="#" aria-label="GitHub">GH</a>
+              <a href="#" aria-label="LinkedIn">in</a>
+              <a href="#" aria-label="Twitter">X</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="skills">
+      <div class="container">
+        <p class="eyebrow reveal">My Skills</p>
+        <h2 class="section-title reveal">Tools I work <span class="grad">with</span></h2>
+        <div class="skills-grid">
+          <div class="skill reveal"><div class="skill-head"><span>HTML & CSS</span><em>95%</em></div><div class="bar"><i data-w="95"></i></div></div>
+          <div class="skill reveal"><div class="skill-head"><span>JavaScript</span><em>90%</em></div><div class="bar"><i data-w="90"></i></div></div>
+          <div class="skill reveal"><div class="skill-head"><span>React / Next.js</span><em>85%</em></div><div class="bar"><i data-w="85"></i></div></div>
+          <div class="skill reveal"><div class="skill-head"><span>Node.js</span><em>80%</em></div><div class="bar"><i data-w="80"></i></div></div>
+          <div class="skill reveal"><div class="skill-head"><span>UI / UX Design</span><em>88%</em></div><div class="bar"><i data-w="88"></i></div></div>
+          <div class="skill reveal"><div class="skill-head"><span>Animation</span><em>92%</em></div><div class="bar"><i data-w="92"></i></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <p class="eyebrow reveal">Portfolio</p>
+        <h2 class="section-title reveal">Featured <span class="grad">projects</span></h2>
+        <div class="projects-grid">
+          <article class="project reveal">
+            <div class="thumb" style="--c1:#6d5efc;--c2:#00e0c6"></div>
+            <div class="project-body">
+              <h3>Nova Dashboard</h3>
+              <p>Real-time analytics dashboard with smooth data animations.</p>
+              <div class="tags"><span>React</span><span>D3.js</span><span>API</span></div>
+            </div>
+          </article>
+          <article class="project reveal">
+            <div class="thumb" style="--c1:#ff5f9e;--c2:#ffb86c"></div>
+            <div class="project-body">
+              <h3>Aurora Commerce</h3>
+              <p>Headless e-commerce store with instant checkout & cart.</p>
+              <div class="tags"><span>Next.js</span><span>Stripe</span></div>
+            </div>
+          </article>
+          <article class="project reveal">
+            <div class="thumb" style="--c1:#00c2ff;--c2:#7c4dff"></div>
+            <div class="project-body">
+              <h3>Pulse Chat</h3>
+              <p>Realtime messaging app with presence and typing indicators.</p>
+              <div class="tags"><span>Node</span><span>Socket.io</span></div>
+            </div>
+          </article>
+          <article class="project reveal">
+            <div class="thumb" style="--c1:#00e0a4;--c2:#00b3ff"></div>
+            <div class="project-body">
+              <h3>Lumen Landing</h3>
+              <p>Animated marketing page with scroll-driven storytelling.</p>
+              <div class="tags"><span>GSAP</span><span>CSS</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="contact">
+      <div class="container narrow">
+        <p class="eyebrow reveal">Contact</p>
+        <h2 class="section-title reveal">Let's build something <span class="grad">great</span></h2>
+        <form class="contact-form reveal" id="contactForm">
+          <div class="field"><input type="text" id="name" required placeholder=" " /><label for="name">Your Name</label></div>
+          <div class="field"><input type="email" id="email" required placeholder=" " /><label for="email">Email Address</label></div>
+          <div class="field"><textarea id="message" rows="4" required placeholder=" "></textarea><label for="message">Message</label></div>
+          <button type="submit" class="btn btn-primary full">Send Message ✦</button>
+          <p class="form-note" id="formNote"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Rashel Mahmud — Crafted with care.</p>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
